@@ -1,57 +1,39 @@
-# Sorting Strings Based on Order
+-Create two StringBuilder(s1,s2) objects to store the sorted and unsorted parts of the string
+    -s1 will store the sorted part
+    -s2 will store the unsorted part
+-Create an array to store the count of each character in the 'order' string
 
-This Java program demonstrates how to sort a given string based on a specified order. The algorithm uses two `StringBuilder` objects (`s1` for the sorted part and `s2` for the unsorted part) and an array to store the count of each character in the 'order' string.
-
-## Implementation Details
-
-1. **Initialize StringBuilder Objects:**
-   - `s1` is used to store the sorted part.
-   - `s2` is used to store the unsorted part.
-
-   ```java
-   StringBuilder s1 = new StringBuilder();
-   StringBuilder s2 = new StringBuilder();
-Count Character Occurrences:
-
-Create an array to store the count of each character in the 'order' string.
-java
-Copy code
-int[] a = new int[26]; // Assuming lowercase English alphabets
-for (int i = 0; i < order.length(); i++) {
-    char c = order.charAt(i);
-    a[c - 'a']++;
-}
-Process Characters in the Input String:
-
-Iterate through each character in the input string 'str'.
-Append characters not in the 'order' string to the unsorted part (s2).
-Increment the count of characters in the 'order' string.
-java
-Copy code
-for (int i = 0; i < str.length(); i++) {
-    char c = str.charAt(i);
-    if (a[c - 'a'] == 0) {
-        s2.append(c);
-    } else {
-        a[c - 'a']++;
+-Count the occurrences of each character in the 'order' string and add it to the array.
+     ```java
+    for (int i = 0; i < order.length(); i++) {
+            char c = order.charAt(i);
+            a[c - 'a']++;
     }
-}
-Process Characters in the 'Order' String:
 
-Iterate through each character in the 'order' string.
-Append the character to the sorted part (s1) while its count is greater than 1.
-java
-Copy code
-for (int i = 0; i < order.length(); i++) {
-    char c = order.charAt(i);
-    while (a[c - 'a'] > 1) {
-        s1.append(c);
-        a[c - 'a']--;
+-Process each character in the input string 'str'
+    ```java  
+    for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            // If the character is not in the 'order' string, append it to the unsorted part
+            if (a[c - 'a'] == 0) {
+                s2.append(c);
+            } else {
+                // If the character is in the 'order' string, increment its count in the array
+                a[c - 'a']++;
+            }
     }
-}
-Return Concatenated Result:
 
-Return the concatenated result of the sorted and unsorted parts.
-java
-Copy code
-return s1.toString() + s2.toString();
+-Process each character in the 'order' string
+     ```java
+    for (int i = 0; i < order.length(); i++) {
+            char c = order.charAt(i);
+            // Append the character to the sorted part while its count is greater than 1
+            while (a[c - 'a'] > 1) {
+                s1.append(c);
+                a[c - 'a']--;
+            }
+     }
+
+-Return the concatenated result of the sorted and unsorted parts
+        ```java
+        return s1.toString() + s2.toString();
