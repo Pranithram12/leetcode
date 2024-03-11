@@ -4,7 +4,7 @@
     ```java
    StringBuilder s1 = new StringBuilder();
    StringBuilder s2 = new StringBuilder();
--Create an array to store the count of each character in the 'order' string
+   -Create an array to store the count of each character in the 'order' string.
 
 -Count the occurrences of each character in the 'order' string and add it to the array.
     ```java
