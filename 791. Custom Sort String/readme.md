@@ -4,14 +4,14 @@
 -Create an array to store the count of each character in the 'order' string
 
 -Count the occurrences of each character in the 'order' string and add it to the array.
-     ```java
+```java
     for (int i = 0; i < order.length(); i++) {
             char c = order.charAt(i);
             a[c - 'a']++;
     }
 
 -Process each character in the input string 'str'
-    ```java  
+```java  
     for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
             // If the character is not in the 'order' string, append it to the unsorted part
@@ -24,7 +24,7 @@
     }
 
 -Process each character in the 'order' string
-     ```java
+```java
     for (int i = 0; i < order.length(); i++) {
             char c = order.charAt(i);
             // Append the character to the sorted part while its count is greater than 1
@@ -35,5 +35,5 @@
      }
 
 -Return the concatenated result of the sorted and unsorted parts
-        ```java
+```java
         return s1.toString() + s2.toString();
