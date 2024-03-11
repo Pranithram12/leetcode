@@ -1,4 +1,4 @@
--Create two StringBuilder(s1,s2) objects to store the sorted and unsorted parts of the string
+-Create two StringBuilder(s1,s2) objects to store the sorted and unsorted parts of the string.
     -s1 will store the sorted part
     -s2 will store the unsorted part
     ```java
