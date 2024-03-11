@@ -1,0 +1,23 @@
+
+The customSortString method takes two parameters: order, which represents the desired order of characters, and str, the input string to be sorted. The method creates two StringBuilder objects, s1 and s2, to store the sorted and unsorted parts of the final string.
+
+Initialization:
+
+s1 is designated for the sorted part, and s2 is for the unsorted part.
+An array a of size 26 is created to store the count of each character in the 'order' string.
+Counting Occurrences:
+
+A loop iterates through each character in the 'order' string, incrementing the corresponding count in the array.
+Processing Input String:
+
+Another loop processes each character in the input string 'str'.
+If the character is not in the 'order' string, it is appended to the unsorted part (s2).
+If the character is in the 'order' string, its count is incremented in the array.
+Sorting:
+
+A third loop processes each character in the 'order' string.
+If the count of a character is greater than 1, it is appended to the sorted part (s1) while decrementing its count in the array.
+Concatenation:
+
+The final result is obtained by concatenating the sorted and unsorted parts, converted to strings using toString().
+The purpose of the code is to custom sort the characters in the input string based on the order specified in the 'order' string. The sorted characters are repeated according to their count in the input string, and the unsorted characters are appended at the end of the result. The implementation utilizes StringBuilder for efficient string manipulation.
