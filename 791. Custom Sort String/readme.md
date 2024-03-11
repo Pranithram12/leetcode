@@ -1,6 +1,9 @@
 -Create two StringBuilder(s1,s2) objects to store the sorted and unsorted parts of the string
     -s1 will store the sorted part
     -s2 will store the unsorted part
+     ```java
+   StringBuilder s1 = new StringBuilder();
+   StringBuilder s2 = new StringBuilder();
 -Create an array to store the count of each character in the 'order' string
 
 -Count the occurrences of each character in the 'order' string and add it to the array.
