@@ -1,0 +1,34 @@
+Preparation:
+-It creates a HashMap named map to store the cumulative sum (prefix sum) seen so far and the corresponding node in the linked list where that sum was encountered.
+-It creates a dummy node (dummy) with a value of 0 and sets its next pointer to the head of the input list (head). This dummy node helps handle edge cases where the zero-sum sublist starts at the beginning.
+-It adds the initial prefix sum (0) and the dummy node (dummy) to the map.
+-It initializes a variable prefixsum to 0 to track the current cumulative sum while iterating through the list.
+
+
+Iterating Through the List:
+-The code enters a while loop that continues as long as head is not null (i.e., there are more nodes to process).
+    Inside the loop:
+        -It adds the current node's value (head.val) to the prefixsum.
+        -It checks if the map already contains a node for the current prefixsum.
+            -If not (!map.containsKey(prefixsum)):
+                -This means the current prefixsum hasn't been seen before. It adds the current prefixsum and the current node (head) to the map.
+            -If yes (map.containsKey(prefixsum)):
+                -This indicates that a previous sublist ending at the node stored in map.get(prefixsum) has the same cumulative sum as the current prefix sum. This means we've found a zero-sum sublist.
+                    -It retrieves the starting node (start) of the sublist to be removed from the map.
+                    -It creates a temporary node (curr) initialized to start.
+                    -It initializes another variable sum to prefixsum.
+                    -It enters an inner loop that iterates from the starting node (start) until it reaches the current node (head).
+                        Inside the inner loop:
+                            -It moves the curr pointer to the next node in the list.
+                            -It adds the value of the next node (curr.val) to the sum.
+                            -If curr is not yet at the head node, it removes the current sum from the map since this sublist has already been encountered.
+                    -Once the inner loop finishes, it removes the zero-sum sublist by setting the next pointer of the starting node (start.next) to point to the node after the current node (head.next). This effectively skips the sublist in the resulting linked list.
+
+
+Moving to the Next Node:
+-After processing the current node, it moves the head pointer to the next node in the list (head.next) to continue iterating.
+
+
+Returning the Result:
+-After the loop completes, it returns the next pointer of the dummy node (dummy.next). This points to the head of the resulting linked list where all zero-sum sublists have been removed.
+Overall, this code efficiently removes zero-sum sublists from a linked list by using a hash map to track cumulative sums and their corresponding nodes.
