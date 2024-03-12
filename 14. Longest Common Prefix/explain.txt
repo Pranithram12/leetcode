@@ -1,0 +1,24 @@
+Handling Empty Input (Note):
+-The code starts by checking if the input array strs is either null or empty (length is 0).
+-If so, it returns an empty string (""), which is the correct answer for this case.
+
+Sorting the Input:
+-If the input is not empty, the code uses the Arrays.sort method to sort the array of strings (strs).
+-Sorting helps in efficiently finding the common prefix. 
+-The strings with the least overlap (likely the most dissimilar) will end up at the beginning and end of the sorted list.
+
+Extracting Strings for Comparison: 
+-After sorting, it assigns two variables:
+   -str1: Holds the first element from the sorted array (strs[0]).
+   -str2: Holds the last element from the sorted array (strs[strs.length-1]).
+
+Iterative Character Comparison:
+-It initializes a variable index to 0. This variable keeps track of the number of characters that match in the prefix.
+-The code enters a while loop that continues as long as index is within the length of str1.
+-Inside the loop, it compares the characters at the current index position in both str1 and str2.
+-If the characters match, the index is incremented.
+-If the characters don't match, the loop breaks.
+
+Returning the Prefix:
+-After the loop exits, it extracts the prefix using str1.substring(0, index) and returns it. 
+-This substring represents the characters from the beginning of str1 (index 0) up to, but not including, the index (index).
