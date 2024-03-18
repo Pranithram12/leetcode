@@ -1,0 +1,8 @@
+-First check wether the newinterval is overlapping with intervals.
+-create a result variable(linkedlist) and create a while loop and check if there is no overlapping and add that point in the result.
+-create another while loop and check overlapping and here modify the newinterval with  below code , which nothing but finding min of intervalstart and newintervalstart,and max of intervalend and newintervalend.
+            newInterval[0]=Math.min(intervals[i][0],newInterval[0]);
+            newInterval[1]=Math.max(intervals[i][1],newInterval[1]);
+-now add newInterval into the result after no more overlapping.
+-add intervals which are not overlapping.(which are after the newInterval).
+-convert linkedlist result into an array and return the array. 
