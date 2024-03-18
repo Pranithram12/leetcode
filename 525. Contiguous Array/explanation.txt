@@ -1,0 +1,8 @@
+-The findMaxLength method takes an integer array nums as input and returns an integer, which represents the maximum length of a contiguous subarray with equal numbers of 0s and 1s.
+-It uses a HashMap (map) to store the cumulative sum of elements encountered so far (sum) and their corresponding index.
+-Initially, the map is initialized with a sum of 0 and index -1. This helps in calculating the length of subarrays starting from index 0.
+-The code converts all 0s in the input array to -1s. This conversion simplifies the calculation of subarray lengths with equal numbers of 0s and 1s.
+-It then iterates through the array, updating the sum as it encounters elements. If the current sum is already in the map, it updates the maxLength by comparing it with the difference between the current index and the index stored in the map for that sum. This step ensures that we find the longest subarray with equal numbers of 0s and 1s.
+-If the current sum is not in the map, it adds the sum to the map with its current index.
+-Finally, it returns the maxLength, which represents the length of the longest contiguous subarray with equal numbers of 0s and 1s.
+-Note: This code is based on the concept of finding the longest subarray with equal numbers of 0s and 1s using a HashMap to store cumulative sums and their indices.
