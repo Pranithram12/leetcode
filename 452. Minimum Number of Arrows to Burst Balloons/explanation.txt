@@ -1,0 +1,7 @@
+-First Sort the give array
+-take first line(I mean [1(start),6(end)]) and name it as prev
+-take second line and name it as curr
+-assign a varaiable name ass arrow with value 1
+-In for loop check the value until the curr is graeater than prev.If it is greater increment the arrow++
+-while checking every iteration ,change the prev value by taking the max value of prevstart and currstart and also min of prevend and currend.
+-After completing the total iterations return the value of arrow.
