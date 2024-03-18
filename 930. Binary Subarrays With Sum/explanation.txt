@@ -1,0 +1,18 @@
+Data Structures:
+   Map<Integer, Integer> map:
+      -This map is used to store the cumulative sums encountered during the iteration. 
+      -The key represents the cumulative sum, and the value represents the count of occurrences of that cumulative sum encountered so far.
+    int count: This variable is used to keep track of the count of subarrays found with the sum equal to goal.
+    int sum: This variable is used to keep track of the cumulative sum of elements encountered during the iteration.
+
+Iteration over nums:
+This loop iterates over each element in the array nums and calculates the cumulative sum sum by adding each element to it.
+
+Subarray Sum Computation:
+-If the current sum is equal to the goal, it means we have found a subarray with the sum equal to goal.
+-In this case, we increment the count variable.
+-If there exists a previous cumulative sum (sum - goal) in the map, it implies there's a subarray between the current element and the element where the previous cumulative sum was encountered that sums up to the goal. 
+So, we increment the count variable by the value associated with the previous cumulative sum in the map.
+
+Updating the Map:
+After processing each element, we update the map to store the current cumulative sum along with its count of occurrences.
