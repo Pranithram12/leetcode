@@ -1,0 +1,23 @@
+-Take a new array which is count of length 26.
+
+-Iterate the count to fill the repeating of alphabets.which is in the below code.
+        for(int i=0;i<tasks.length;i++){
+            count[tasks[i]-'A']++;
+        }
+
+-Sort the count array,So that the highest value alphabest will be at last.
+-Find the maximum frequence value of the count array.
+
+-Find the idile value using below formula
+   int idle=(maxfreq-1)*n;
+
+-Here find the idle values while checking event alphabet from the count array and find the idle value.
+  for (int i=24;i>=0;i--){
+        idle-=Math.min(maxfreq-1,count[i]);
+  }
+
+-If the value of idle is negative , make it as zero using below code.
+      idle=Math.max(0,idle);
+
+-Now return the value.
+     return tasks.length+idle;
