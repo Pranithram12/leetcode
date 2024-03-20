@@ -1,0 +1,12 @@
+-first take two empty nodes(Start,end),assign one node(start) as null and another node(end) assign to list1.
+
+-Iterate end until less than b(index<b)
+   if a-1 its there in iteration , assign start=end
+
+-Assign start.next to the list2.
+
+-Iterate list2 until it finds null value.If it finds null value ,assign list2.next = end.next.
+
+-Assign end.next == null to finish the node.
+
+return the list1.
