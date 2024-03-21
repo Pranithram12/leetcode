@@ -1,0 +1,9 @@
+-First check the head is null or head.next is null , if it is return head.
+-Create two new nodes prev and curr
+    ListNode prevnode = null;
+    ListNode currntnode = head;
+-Give a while loop and check currntnode is not null 
+   - create a newnode and assign current.next 
+   -to update 
+       - iteration prevnode=currentnode and currentnode=newnode
+-Assign head=prevnode  and return the head.
