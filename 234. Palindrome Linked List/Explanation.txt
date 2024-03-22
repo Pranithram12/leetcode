@@ -1,0 +1,15 @@
+reverse(ListNode head): 
+This method reverses a given linked list.
+It uses three pointers (prevnode, currnode, and nextnode) to reverse the list in-place by adjusting the next pointers of each node.
+ It returns the new head of the reversed list.
+
+findmiddle(ListNode head): 
+This method finds the middle node of the linked list using the "tortoise and hare" technique.
+It initializes two pointers (here and turtle) to the head of the list and advances them at different speeds until here reaches the end.
+The turtle pointer ends up at the middle node, which is returned.
+
+isPalindrome(ListNode head):
+ This method checks if a linked list is a palindrome. 
+ It first handles the cases where the list is empty or has only one node (which are considered palindromes). 
+ Then, it finds the middle node using the findmiddle method and reverses the second half of the list using the reverse method. 
+ Finally, it compares the values of corresponding nodes in the first and second halves to determine if the list is a palindrome.
