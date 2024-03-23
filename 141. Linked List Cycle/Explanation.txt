@@ -1,0 +1,24 @@
+ListNode Definition:
+-Defines a singly-linked list node class ListNode with an integer value (val) and a reference to the next node (next).
+-Includes a constructor ListNode(int x) to initialize a node with a given value and set its next reference to null.
+
+Solution Class:
+-Contains the hasCycle method to detect if a linked list contains a cycle.
+-Takes the head of the linked list as input.
+
+Null Check:
+-Checks if the input head is null. If it is, the method returns false as there can't be a cycle in an empty list.
+
+Initialization:
+-Initializes two pointers, here and turtle, both pointing to the head of the list initially.
+
+While Loop:
+-Checks if here is not null and here.next is not null, ensuring that there are at least two more nodes ahead.
+-Moves here two steps forward (here=here.next.next) and turtle one step forward (turtle=turtle.next).
+
+Cycle Detection:
+-Checks in each iteration if here has caught up to turtle, which indicates the presence of a cycle.
+-If a cycle is detected (here == turtle), the method immediately returns true.
+
+Returning Result:
+-If the loop completes without finding a cycle, the method returns false, indicating that the linked list does not contain a cycle.
