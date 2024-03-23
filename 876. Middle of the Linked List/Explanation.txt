@@ -1,0 +1,21 @@
+ListNode Definition:
+-Defines a singly-linked list node with an integer value (val) and a reference to the next node (next).
+-Includes constructors for creating nodes with different parameters.
+
+Solution Class:
+-Contains the middleNode method to find the middle node of a linked list.
+-Takes the head of the linked list as input.
+
+Initialization:
+-Initializes two pointers, here and turtle, both pointing to the head of the list initially.
+
+While Loop:
+-Checks if here is not null and here.next is not null, ensuring that there are at least two more nodes ahead.
+-Moves here two steps forward (here=here.next.next) and turtle one step forward (turtle=turtle.next).
+
+Finding the Middle Node:
+-As here moves twice as fast as turtle, when here reaches the end of the list (here == null or here.next == null), turtle will be at the middle node.
+
+Returning the Result:
+-Returns the turtle pointer, which points to the middle node of the linked list.
+-Overall, the code efficiently finds the middle node of a singly-linked list using two pointers that move at different speeds, achieving a time complexity of O(N/2) or simply O(N), where N is the number of nodes in the list.
