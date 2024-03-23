@@ -1,0 +1,35 @@
+Reverse Method:
+-The reverse method takes a head node of a linked list and reverses the list.
+-It uses three pointers: prevnode (initialized to null), currnode (initialized to the head of the list), and nextnode (to store the next node temporarily).
+-It iterates through the list, updating the next reference of each node to point to the previous node (prevnode).
+-Finally, it returns the new head of the reversed list (prevnode).
+
+Finding middle:
+-The reorderList method takes the head of a linked list and reorders it by rearranging the nodes.
+-It first finds the midpoint of the list using two pointers, here and turtle, where here moves two steps at a time and turtle moves one step at a time.
+-After finding the midpoint, it reverses the second half of the list starting from turtle.next using the reverse method.
+-It then breaks the link between the first and second halves by setting turtle.next to null.
+
+Reorder list :
+
+1-ListNode first=head; and ListNode sec=reverse(turtle.next);:
+-Here, first is initialized with the head of the linked list head, and sec is assigned the reversed second half of the list starting from turtle.next.
+-The reverse method is called with turtle.next as an argument, which returns the head of the reversed second half of the list.
+
+2-turtle.next=null;:
+-This line breaks the link between the first and second halves of the list by setting turtle.next to null. 
+-This is necessary to separate the two halves for reordering.
+
+3-while(sec != null){:
+-This initiates a loop that iterates until the end of the reversed second half of the list (sec) is reached.
+
+4-ListNode temp1=first.next; and ListNode temp2=sec.next;:
+-Two temporary nodes temp1 and temp2 are created to store the next nodes of first and sec, respectively.
+-These are used to preserve the next nodes during reordering.
+
+5-first.next=sec; and sec.next=temp1;:
+-In each iteration of the loop, the next pointer of first is set to point to the current node in the reversed second half (sec), effectively interweaving nodes from the first and second halves.
+-Simultaneously, the next pointer of sec is set to point to the next node in the first half (temp1), ensuring that the connection is maintained during reordering.
+
+6-first=temp1; and sec=temp2;:
+-Finally, first is updated to point to its next node (temp1), and sec is updated to point to its next node (temp2), preparing for the next iteration of the loop.
