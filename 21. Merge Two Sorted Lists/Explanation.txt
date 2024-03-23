@@ -1,0 +1,8 @@
+-The code defines a class Solution with a method mergeTwoLists that merges two sorted singly-linked lists.
+-It starts by creating a dummy node to facilitate the merging process.
+-Inside the method, it initializes curr as a pointer to the dummy node.
+-It then enters a while loop that continues as long as both list1 and list2 are not null.
+-Within the loop, it compares the values of the current nodes in list1 and list2 and links the smaller node to curr.next.
+-It then moves the pointer of the smaller node's list to the next node.
+-After the loop, it checks if either list1 or list2 still has nodes remaining and links them to curr.next accordingly.
+-Finally, it returns the next node after the dummy node, which is the merged sorted list.
