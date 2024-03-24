@@ -1,21 +1,16 @@
--Create a new ArrayList and add all the values of list of  linkedlist in ArrayList.
-   List<Integer> values=new ArrayList<>();
-        for(int i=0;i<lists.length;i++){
-            ListNode temp=lists[i];
-            while(temp != null){
-                values.add(temp.val);
-                temp=temp.next;
-            }
-        }
+Initialization:
+-Two pointers fast and slow are initialized to the first element of the array nums.
 
--Sort the array list.
-    Collections.sort(values);
+Phase 1: Cycle Detection:
+-The code uses Floyd's Tortoise and Hare algorithm to detect the intersection point of the cycle within the array.
+-In a while loop that runs indefinitely (while (true)), the slow pointer moves one step forward (slow = nums[slow]) and the fast pointer moves two steps forward (fast = nums[nums[fast]]) in each iteration.
+-The loop continues until slow and fast meet at the intersection point, which indicates the presence of a cycle in the array.
+-When slow and fast are equal, the loop breaks (if (slow == fast) { break; }).
 
--Convert the Array to Linked list.
-    ListNode head=new ListNode(0);
-        ListNode curr=head;
-        for(int j=0;j<values.size();j++){
-            curr.next = new ListNode(values.get(j));
-            curr=curr.next;
-        }
-        return head.next;
+Phase 2: Finding the Entry Point of the Cycle:
+-After detecting the intersection point, the slow pointer is reset to the first element of the array (slow = nums[0]).
+-Another while loop is used to find the entry point of the cycle, where both slow and fast move one step forward at the same pace (slow = nums[slow] and fast = nums[fast]) until they meet again.
+-The meeting point of slow and fast in this phase is the duplicate number in the array.
+
+Return Result:
+-The duplicate number (either slow or fast, as they meet at the same position) is returned as the result of the findDuplicate method.
