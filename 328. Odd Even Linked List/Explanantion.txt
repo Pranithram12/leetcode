@@ -1,0 +1,16 @@
+-First create three pointers - odd ,even ,evenhead.
+
+-While even and even.next not equal to next run the below condition ,which is to link the odd nodes and the even nodes.
+
+    while(even != null && even.next != null){
+            odd.next=odd.next.next;     /* (here odd.next should is next of even nodes(which is odd)) */
+            odd=odd.next;               /* (to iterate over the whole linked list make odd is equal to odd.next) */
+
+            even.next=even.next.next;   /* (here even.next should is next of odd nodes(which is even)) */
+            even=even.next;             /* (to iterate over the whole linked list, make even is equal to even.next) */
+
+        } 
+
+-Add the Evenhead to odd.next to make them as one LinkedList.
+  odd.next=evenhead;
+  return head;

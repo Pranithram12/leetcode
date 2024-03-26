@@ -1,0 +1,15 @@
+-Find the mid value of the Given Linked list.While mid value traverse the Prev pointer flowwing the turtle.
+   while(here != null && here.next!= null){
+            prev=turtle; (here prev pointer should follow the turtle)
+            turtle=turtle.next;
+            here=here.next.next;
+        }
+
+-If the prev not equal to null make prev.next is equal to turtle next ,so that the mid value is removed.Else head is equal to head.next
+   if(prev != null){
+            prev.next = turtle.next;
+        }
+    else{
+        head=head.next;
+    }
+
