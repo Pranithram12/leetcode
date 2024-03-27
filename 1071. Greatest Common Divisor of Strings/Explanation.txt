@@ -1,0 +1,18 @@
+String Concatenation Check:
+-The gcdOfStrings method starts by concatenating str1 and str2 (str1 + str2) and then concatenating str2 and str1 (str2 + str1).
+-It checks if the concatenated strings are equal using the equals method (!(str1 + str2).equals(str2 + str1)).
+-If the concatenated strings are not equal, it means that str1 and str2 cannot form a common divisor, so it returns an empty string "".
+
+GCD Calculation for Lengths:
+-If the concatenated strings are equal, the code calculates the lengths of str1 and str2 (len1 and len2 respectively).
+-It then calls the gcd method with len1 and len2 as arguments to calculate their Greatest Common Divisor (GCD).
+
+GCD Method (gcd):
+-The gcd method is implemented using the Euclidean algorithm.
+-It checks if b (the second argument) is zero. If so, it returns a (the first argument) as the GCD.
+-If b is not zero, it calculates the remainder of a divided by b using the modulus operator % (a % b).
+-It then recursively calls itself with b and a % b as arguments until b becomes zero.
+
+Substring Extraction:
+-After obtaining the GCD of the lengths, the code returns a substring of str1 starting from index 0 and ending at the calculated GCD value (exclusive).
+-This substring represents the common divisor of str1 and str2.
