@@ -1,0 +1,25 @@
+Input Parameters:
+-The mergeAlternately method takes two strings, word1 and word2, as input.
+
+Length Calculation:
+-It calculates the lengths of word1 and word2 using word1.length() and word2.length() and stores them in variables len1 and len2 respectively.
+-It then finds the minimum length between len1 and len2 using Math.min(len1, len2) and stores it in the variable min.
+
+Determine Longer String:
+-It checks if min is equal to len1 or len2 to determine which string is longer (word1 or word2).
+-If min is equal to len1, it means word1 is longer, so it assigns word2 to the longer variable.
+-If min is equal to len2, it means word2 is longer, so it assigns word1 to the longer variable.
+
+Character Arrays and StringBuilder:
+-It converts word1 and word2 into character arrays using toCharArray() method and stores them in char1 and char2 arrays respectively.
+-It initializes a StringBuilder named sb to build the merged string.
+
+Merging Process:
+-It then iterates through the characters of both strings up to the minimum length (min), appending characters alternately from char1 and char2 to the sb StringBuilder.
+-For example, if min is 3 and word1 is "abc" and word2 is "xyz", the merged string at this stage would be "axbycz".
+
+Appending Remaining Characters:
+-After merging the characters up to min, it appends the remaining characters of the longer string (longer) to the sb StringBuilder using longer.substring(min).
+
+Return Result:
+-Finally, it returns the merged string by converting the sb StringBuilder to a string using toString().
