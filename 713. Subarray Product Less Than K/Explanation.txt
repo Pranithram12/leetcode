@@ -1,0 +1,55 @@
+Initialization:
+-start, end, product, and count are initialized to 0.
+-n is set to the length of the array nums, which is 4.
+-Since k = 100 is greater than 1, the code proceeds.
+
+Main Loop:
+-Begin the loop with end less than n (which is 4 in this case).
+
+Expansion Phase:
+-Multiply product by nums[end]. Initially, product = 1 * 10 = 10.
+-Increment end to 1.
+
+Expansion Phase (continued):
+-Multiply product by nums[end]. Now, product = 10 * 5 = 50.
+-Increment end to 2.
+
+Expansion Phase (continued):
+-Multiply product by nums[end]. Now, product = 50 * 2 = 100.
+
+Shrinking Phase:
+-Since product >= k, enter the shrinking loop.
+-Divide product by nums[start] (100 / 10 = 10).
+-Increment start to 1.
+
+Counting Subarrays:
+-Calculate the count of subarrays meeting the condition (product < k) using (end - start + 1). In this case, count = (2 - 1 + 1) = 2.
+-Add this count to the total count variable.
+
+Expansion Phase (continued):
+-Multiply product by nums[end]. Now, product = 10 * 2 = 20.
+-Increment end to 3.
+
+Counting Subarrays (continued):
+-Calculate the count of subarrays (product < k). In this case, count = (3 - 1 + 1) = 3.
+-Add this count to the total count variable.
+
+Expansion Phase (continued):
+-Multiply product by nums[end]. Now, product = 20 * 6 = 120.
+
+Shrinking Phase (continued):
+-Since product >= k, enter the shrinking loop.
+-Divide product by nums[start] (120 / 5 = 24).
+-Increment start to 2.
+
+Counting Subarrays (continued):
+-Calculate the count of subarrays (product < k). In this case, count = (4 - 2 + 1) = 3.
+-Add this count to the total count variable.
+
+End of Loop:
+-The loop ends as end becomes equal to n.
+
+Return Count:
+-Return the total count of subarrays, which is 2 + 3 + 3 = 8.
+
+So, the code correctly identifies 8 subarrays in nums = [10, 5, 2, 6] that have a product less than k = 100, as shown in the output and explanation provided earlier
