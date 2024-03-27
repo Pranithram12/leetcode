@@ -1,0 +1,25 @@
+Check for Null Head:
+-The code begins by checking if the input head is null. If it is, the function returns null, indicating that the copied list will also be null.
+
+Create a HashMap:
+-If the head is not null, a HashMap named map is created. This map will store mappings between nodes in the original list and their corresponding nodes in the copied list.
+
+Create a Dummy Linked List:
+-The code then iterates through the original linked list starting from head.
+For each node curr in the original list:
+  -A new node newNode is created with the same value as curr.
+  -The newNode is added to the map with curr as the key and newNode as the value.
+  -The curr pointer moves to the next node (curr.next).
+
+Copy Next and Random Pointers:
+-After creating the dummy linked list in the map, another loop iterates over the keys (Node objects) in the map using an enhanced for loop (for(Node key : map.keySet()) { ... }).
+For each key (original node) in the map:
+   -Retrieve the corresponding new node (newNode) from the map using map.get(key).
+   -Set the next pointer of newNode to the new node corresponding to the next node of key (key.next), retrieved from the map using map.get(key.next).
+   -Set the random pointer of newNode to the new node corresponding to the random node of key (key.random), retrieved from the map using map.get(key.random).
+
+Return the Copied List:
+-Finally, the code returns the head of the copied list, which is the value associated with the original head node (head) in the map (map.get(head)).
+
+
+In summary, the code creates a copy of the linked list by first creating a dummy linked list with the same values as the original list and then copying the next and random pointers of each node from the original list to their corresponding nodes in the copied list using a HashMap for efficient lookup and mapping.
