@@ -1,0 +1,18 @@
+Initialization:
+-Initialize buy_price to the first element of the prices array (prices[0]) as the initial buying price.
+-Initialize profit to 0, as there is no profit initially.
+
+Loop through Prices:
+-Iterate through the prices array using a for loop from index 0 to prices.length - 1.
+
+Check for Buying Opportunity:
+-Inside the loop, check if the current price (prices[i]) is less than the buy_price.
+-If prices[i] is less than buy_price, update buy_price to prices[i]. This represents a potential buying opportunity at a lower price.
+
+Calculate Profit on Selling:
+-If the current price (prices[i]) is not less than buy_price, calculate the profit that can be made by selling at the current price.
+-Calculate current_profit as prices[i] - buy_price, which represents the profit if the stock is sold at the current price after buying at buy_price.
+-Update profit to the maximum value between current_profit and the current profit using Math.max(current_profit, profit). This ensures that profit always holds the maximum profit encountered so far.
+
+Return Maximum Profit:
+-After looping through all prices, return the final profit, which represents the maximum profit that can be achieved by buying and selling the stock.
