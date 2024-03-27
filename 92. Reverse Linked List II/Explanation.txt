@@ -1,0 +1,17 @@
+Initialize Variables:
+-dummy node is created with a value of 0, and its next pointer is set to head. This dummy node helps handle cases where left is at the beginning of the list.
+-lefprev and curr are initialized to dummy, and they will be used to find the node before the left-th node (lefprev) and the left-th node itself (curr).
+
+Find Left-Previous and Left Nodes:
+-The first loop iterates until left - 1 times. This moves lefprev and curr to the nodes before and at the left-th position in the list, respectively.
+
+Reverse Sub-list from Left to Right:
+-After finding the left and left-previous nodes, a second loop reverses the sublist starting from curr (left-th node) up to right - left nodes.
+-Inside this loop, curr.next is assigned to prev, effectively reversing the direction of pointers.
+
+Adjust Pointers:
+-After reversing the sublist, subhead (the original left-th node) should point to the node after the sublist (curr), so subhead.next is set to curr.
+-Additionally, lefprev (the node before the sublist) should point to the last node of the sublist (prev), so lefprev.next is set to prev.
+
+Return the Modified List:
+-Finally, dummy.next is returned, which points to the head of the modified list (whether it was reversed or not).
