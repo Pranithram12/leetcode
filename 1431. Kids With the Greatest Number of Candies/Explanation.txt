@@ -1,0 +1,12 @@
+Finding Maximum Candy Count:
+-The code starts by finding the maximum number of candies among the children. It initializes max to 0 and iterates through the candies array to update max with the maximum value encountered.
+
+Checking Extra Candies:
+-After finding the maximum candy count, the code creates a new ArrayList called res to store the result.
+-It then iterates through the candies array again.
+-For each child (indexed by i), it checks if adding extraCandies to the child's current candy count (candies[i] + extraCandies) would make the child have the maximum or more candies (>= max).
+    -If so, it adds true to the res list, indicating that this child can have the most candies among all children with the extra candies.
+    -Otherwise, it adds false to the res list, indicating that this child cannot have the most candies even with the extra candies.
+
+Returning Result:
+-After iterating through all children, the code returns the res list containing true or false values for each child, indicating whether they can have the most candies among all children with the extra candies.
