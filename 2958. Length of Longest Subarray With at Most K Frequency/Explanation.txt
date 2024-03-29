@@ -1,0 +1,25 @@
+Initialization:
+-Initialize variables start and end to 0, maxlen to 0, and calculate the length n of the input array nums.
+-Create a HashMap called freqmap to store the frequency of elements encountered during the iteration.
+
+Main Loop:
+-The main loop runs until end reaches the end of the array nums.
+-In each iteration, it performs two phases: Expansion and Shrinking.
+
+Expansion Phase:
+-Increment the frequency of the element at index end in freqmap using freqmap.put(nums[end], freqmap.getOrDefault(nums[end], 0) + 1);.
+
+Shrinking Phase:
+-While the frequency of the element at index end in freqmap is greater than k:
+-Decrement the frequency of the element at index start in freqmap using freqmap.put(nums[start], freqmap.get(nums[start]) - 1);.
+-Move start one step forward (start++).
+
+Update Maximum Length:
+-Calculate the current subarray length as end - start + 1.
+-Update maxlen with the maximum value between maxlen and the current subarray length using maxlen = Math.max(maxlen, end - start + 1);.
+
+Move End Pointer:
+-Increment end to move to the next element in the array for the next iteration.
+
+Return Maximum Length:
+-After the loop completes, return the maximum subarray length maxlen.
