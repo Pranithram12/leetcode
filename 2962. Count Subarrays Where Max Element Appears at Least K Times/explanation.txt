@@ -1,0 +1,33 @@
+Finding Maximum Element:
+-The code starts by finding the maximum element in the input array nums.
+-It initializes maxelement to 0 and iterates through each element in nums to update maxelement with the maximum value encountered.
+
+Sliding Window Approach:
+-The code then uses a sliding window approach to count subarrays where the frequency of the maximum element is equal to k.
+
+Initialization:
+-Initialize start, end, count, and maxelementfreqcount variables.
+-start and end mark the current window's boundaries.
+-count keeps track of the total count of subarrays meeting the condition.
+-maxelementfreqcount counts the frequency of the maximum element in the current window.
+
+Main Loop:
+-The main loop runs until end reaches the end of the array nums.
+-In each iteration, it performs two phases: Expansion and Shrinking.
+
+Expansion Phase:
+-If the element at index end in nums is equal to maxelement, increment maxelementfreqcount to track its frequency in the current window.
+
+Shrinking Phase:
+-While the frequency of maxelement in the current window equals k:
+-Add the count of subarrays that can be formed from the remaining elements in the array (count += n - end).
+-Move start forward and decrement maxelementfreqcount if the element at start is equal to maxelement.
+
+Update Count:
+-After the shrinking phase, update count by adding the count of subarrays that meet the condition.
+
+Move End Pointer:
+-Increment end to move to the next element in the array for the next iteration.
+
+Return Count:
+-After the loop completes, return the total count of subarrays meeting the condition.
