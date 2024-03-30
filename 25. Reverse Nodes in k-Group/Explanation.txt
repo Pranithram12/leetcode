@@ -1,0 +1,25 @@
+Input Validation:
+-The method starts with validating the input parameters:
+    -If head is null or head.next is null (meaning there is zero or one node in the list), or k is 1 (indicating no grouping is needed), then the method returns head as there's nothing to reverse.
+
+Initialization:
+-It creates a dummy node to simplify the logic and avoid handling special cases for the head of the list.
+-It sets dummy.next to head, making dummy the initial node before the actual list.
+-It initializes prev to dummy and curr to head to start traversing the list.
+
+Calculating Length:
+-It calls the getlength method to determine the length of the list. This length is used later to determine the number of groups to reverse.
+
+Group Reversal:
+-It enters a loop to reverse groups of size k.
+-Inside the loop, another loop runs k-1 times to reverse each group individually (except the first node of each group).
+-For each group:
+    -It stores curr.next in next to keep track of the next node.
+    -It rearranges the pointers to reverse the group:
+        -curr.next is set to next.next, skipping the next node in the original order.
+        -next.next is set to prev.next, inserting next at the beginning of the reversed group.
+        -prev.next is updated to point to next, making next the new starting node of the reversed group.
+-After each group is reversed, prev is updated to the end of the reversed group, and curr is moved to the next node to prepare for the next group.
+
+Return:
+-Finally, it returns dummy.next, which is the head of the modified list with groups reversed.

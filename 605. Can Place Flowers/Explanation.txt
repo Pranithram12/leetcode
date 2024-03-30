@@ -1,0 +1,15 @@
+Input Validation:
+-The method starts with validating the input parameters:
+    -If n (the number of flowers to place) is 0, it immediately returns true because there are no flowers to place, and the condition is already met.
+
+Main Loop:
+-It iterates through the flowerbed array using a for loop.
+-For each position i in the flowerbed:
+    -Checks if the current position is empty (flowerbed[i] == 0).
+    -Checks if the adjacent positions are also empty (flowerbed[i - 1] == 0 for the left neighbor and flowerbed[i + 1] == 0 for the right neighbor).
+    -If both conditions are true (meaning there's space to place a flower), it places a flower by setting flowerbed[i] = 1.
+    -Increments the count variable to keep track of the number of flowers placed.
+    -Checks if the required number of flowers (n) has been placed. If so, it returns true because the condition is satisfied.
+    
+Return Statement:
+-If the loop completes without placing the required number of flowers (count != n), the method returns false because the condition couldn't be met.

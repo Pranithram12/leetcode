@@ -1,0 +1,25 @@
+Main Method subarraysWithKDistinct:
+-This method calculates the difference between the count of subarrays with at most k distinct elements (atmostk(nums, k)) and the count of subarrays with at most k-1 distinct elements (atmostk(nums, k-1)).
+-The result of this calculation gives the count of subarrays with exactly k distinct elements.
+
+Helper Method atmostk:
+-This method calculates the count of subarrays with at most k distinct elements.
+-It uses a sliding window approach with two pointers (start and end) to track the current subarray being considered.
+-It maintains a Map<Integer, Integer> called map to keep track of the frequency of each element in the current subarray.
+-The end pointer moves from left to right, adding elements to the map and updating the count of distinct elements.
+-When the count of distinct elements exceeds k, the start pointer moves to the right, removing elements from the map until the count becomes less than or equal to k.
+-The count of subarrays with at most k distinct elements is updated based on the current subarray size (end - start + 1).
+
+Here's a step-by-step breakdown of the atmostk method:
+-Initialize start and count to 0.
+-Create a Map<Integer, Integer> named map to store element frequencies.
+-Iterate through the array using the end pointer from 0 to nums.length - 1.
+    -Update the frequency of nums[end] in the map.
+    -If the size of map exceeds k, reduce the size of the window by moving the start pointer to the right until map contains at most k distinct elements.
+        -If the frequency of the element at nums[start] is greater than 1, decrement its frequency in map.
+        -If the frequency becomes 1 after decrementing, remove the element from map.
+        -Increment start after updating map.
+    -Update the count by adding (end - start + 1) to count for each valid subarray with at most k distinct elements.
+    
+Return the final count:
+-which represents the number of subarrays with at most k distinct elements.
