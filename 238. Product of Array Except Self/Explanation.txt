@@ -1,0 +1,21 @@
+Initializing Arrays: 
+-Two arrays, left and right, are initialized with the same length as the input array nums.
+-These arrays will store the product of elements to the left and right of each element in nums, respectively.
+
+Calculating Products to the Left:
+-The left array is populated by iterating through nums from index 1 to the end.
+-At each index i, the value in left[i] is calculated by multiplying the previous value in left[i-1] with the corresponding element in nums[i-1]. 
+-The initial value of left[0] is set to 1.
+
+Calculating Products to the Right: 
+-Similarly, the right array is populated by iterating through nums from the second-to-last index to the first index. 
+-At each index i, the value in right[i] is calculated by multiplying the next value in right[i+1] with the corresponding element in nums[i+1].
+-The initial value of right[nums.length-1] is set to 1.
+
+Combining Left and Right Products: 
+-After calculating left and right, a new array ans is created to store the final product values.
+- For each index i, the value in ans[i] is calculated by multiplying the corresponding values in left[i] and right[i]. 
+-This gives the product of all elements except for the one at index i.
+
+Returning the Result:
+-Finally, the ans array containing the products of all elements except self is returned as the result.
