@@ -1,0 +1,13 @@
+ListNode Definition:
+-The code starts with a definition of a singly-linked list node ListNode with three constructors:
+    -one with no arguments, one with a value argument, and one with both value and next node arguments.
+    
+Remove Nth Node from End:
+-The removeNthFromEnd method takes a linked list head and an integer n as parameters.
+-It creates a dummy node initialized with a value of 0 and sets its next pointer to the head of the original list. This dummy node helps in handling edge cases where the node to be removed is the head itself.
+-Two pointers ptr1 and ptr2 are initialized to the dummy node initially.
+-Pointer ptr2 is moved n+1 steps ahead in the list. This is done to create a gap of n nodes between ptr1 and ptr2, which allows ptr1 to point to the node before the one to be removed.
+-Then, both pointers (ptr1 and ptr2) are moved forward simultaneously until ptr2 reaches the end of the list (ptr2 becomes null).
+-At this point, ptr1 is pointing to the node just before the one to be removed (n nodes from the end).
+-The node to be removed is then disconnected by setting ptr1.next to ptr1.next.next, effectively skipping over the node to be removed.
+-Finally, the modified list is returned, starting from the dummy node's next, which effectively removes the nth node from the end of the original list.
