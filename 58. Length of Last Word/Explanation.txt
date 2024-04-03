@@ -1,0 +1,14 @@
+Method Signature:
+-The method public int lengthOfLastWord(String s) takes a string s as input and returns an integer, which is the length of the last word in the string.
+
+Logic Explanation:
+-The method initializes a variable count to 0. This variable will be used to keep track of the length of the last word encountered in the string.
+-It iterates through the characters of the string s starting from the end (for(int i=s.length()-1; i>=0; i--)).
+-Inside the loop, it checks if the current character (s.charAt(i)) is not a space character (' ').
+    -If it's not a space, it increments the count variable, which means it's part of a word.
+    -If it encounters a space character, it checks if count is greater than 0. If it is, it means there was at least one non-space character before this space, indicating the end of the last word. In this case, it returns the current value of count as the length of the last word.
+-If the loop completes without encountering a space character (i.e., the string consists only of spaces), it returns the current value of count, which may be 0 if there are no words in the string.
+
+Return Value:
+-The method returns the length of the last word in the string s.
+-If the string is empty or consists only of spaces, it returns 0.

@@ -1,0 +1,16 @@
+Method Signature:
+-The method public boolean isIsomorphic(String s, String t) takes two strings s and t as input and returns a boolean value (true if the strings are isomorphic, false otherwise).
+
+Logic Explanation:
+-The method uses a HashMap called charmappingmap to map characters from string s to characters in string t.
+-It iterates through each character in the strings s and t simultaneously using a loop (for(int i=0; i<s.length(); i++)).
+-Inside the loop, it retrieves the current characters at index i from s and t (char original = s.charAt(i); and char replacement = t.charAt(i);).
+-It then checks if the character from s (original) is already mapped to a character in t (replacement) in the charmappingmap using containsKey and containsValue methods of the map.
+    -If original is not already in the map, it checks if replacement is also not already mapped to any character in s (by checking if it's not in the values of charmappingmap).
+        -If both conditions are true, it adds a new mapping of original to replacement in the map (charmappingmap.put(original, replacement);).
+        -If replacement is already mapped to some other character in s, it means s and t cannot be isomorphic, so it returns false.
+    -If original is already in the map, it checks if the mapped character in t (mappedchar) is the same as replacement. 
+        -If they are not the same, it means the mapping is inconsistent, and s and t are not isomorphic, so it returns false.
+        
+Return Value:
+-If the loop completes without finding any inconsistencies in the mappings, it means s and t are isomorphic, so the method returns true.

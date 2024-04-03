@@ -1,0 +1,20 @@
+exist Method:
+-This method is used to check if a given word exists on a 2D board.
+-It takes the board as a 2D character array (char[][] board) and the word to search for (String word).
+-It first initializes variables m and n to store the number of rows and columns in the board, respectively.
+-Then, it iterates through each cell of the board using nested loops (for (int r = 0; r < m; r++) and for (int c = 0; c < n; c++)).
+-Inside the loop, it checks if the current cell (board[r][c]) matches the first character of the word (word.charAt(0)).
+-If there's a match, it calls the dfs method to perform a depth-first search starting from that cell.
+-If dfs returns true (meaning the word is found), the method returns true.
+-If no match is found after checking all cells, the method returns false.
+
+dfs Method:
+-This method performs a depth-first search starting from a given cell (r, c) on the board to find the word.
+-It takes the board, current row and column (r, c), the word to search for, and the current index in the word (wordindex) as parameters.
+-The base case of the recursion is when wordindex reaches the length of the word, indicating that the entire word has been found.
+-It checks for out-of-bounds cases (when r or c is outside the valid range of row and column indices) and returns false in such cases.
+-It also checks if the current cell's character does not match the character at wordindex in the word, returning false in that case.
+-If the current cell is valid and matches the character, it marks the cell as visited (by changing its content to ' ').
+-Then, it recursively calls dfs on adjacent cells (up, right, down, left) to continue searching for the remaining characters of the word.
+-If any of these recursive calls return true, indicating that the word is found, it propagates that true value back up through the recursion.
+-If none of the recursive calls find the word, it backtracks by restoring the original character of the current cell and returns false to backtrack further or indicate that the word is not found in this path.
