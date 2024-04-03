@@ -1,0 +1,17 @@
+Method Signature:
+-The method public String reverseVowels(String s) takes a string s as input and returns a new string with the vowels reversed.
+
+Logic Explanation:
+-The method first converts the input string s into a character array arr using char[] arr = s.toCharArray();. This allows easier manipulation of individual characters.
+-It initializes two pointers start and end to track the positions of characters from the start and end of the string, respectively. Initially, start points to the first character (0), and end points to the last character (s.length() - 1).
+-A string vowels is defined containing all lowercase and uppercase vowels ("aeiouAEIOU"). This string is used to check if a character is a vowel.
+-The method uses a while loop to iterate as long as start is less than end, ensuring that the pointers move towards each other until they meet in the middle of the string.
+-Inside the loop:
+    -The first while loop (while(start < end)) starting from start checks if the character at arr[start] is a vowel. If it's not a vowel, start is incremented to move to the next character. This loop continues until a vowel is found or until start reaches end.
+    -Similarly, the second while loop (while(start < end)) starting from end checks if the character at arr[end] is a vowel. If it's not a vowel, end is decremented to move to the previous character. This loop continues until a vowel is found or until end reaches start.
+    -When both loops find vowels at positions start and end respectively, it swaps these vowels by swapping arr[start] and arr[end]. This effectively reverses the vowels in the string.
+    -Then, start is incremented and end is decremented to continue searching for more vowels to reverse.
+-Once the loop completes (when start is no longer less than end), the method returns a new string created from the modified character array arr using return new String(arr);.
+
+Return Value:
+-The method returns a new string where the vowels have been reversed while keeping the consonants and other characters in their original positions.
