@@ -1,0 +1,36 @@
+Initialize variables:
+    -s is " hello world "
+    -result is ""
+    -i is 0 (starting index for traversal)
+    -n is 17 (length of the input string)
+
+First iteration of the outer while loop:
+    -i is initially 0, which is less than n.
+    -The inner while loop skips the leading spaces, so i becomes 2.
+    -Since i is not equal to or greater than n, we proceed.
+    -j is set to i + 1, which is 3.
+
+Process the first word "hello":
+    -i is 2 (start index of "hello").
+    -j is 7 (end index of "hello").
+    -Extract the word "hello" using s.substring(i, j).
+    -Update result to "hello".
+
+Move to the next word:
+    -i is set to j + 1, which is 8 (skip the space after "hello").
+
+Process the second word "world":
+    -i is 8 (start index of "world").
+    -j is 13 (end index of "world").
+    -Extract the word "world" using s.substring(i, j).
+    -Update result to "world hello".
+
+Move to the next word:
+    -i is set to j + 1, which is 14 (skip the space after "world").
+
+Check if there are more words to process:
+    -i is now 14, which is less than n.
+    -The inner while loop doesn't execute as there is no space at index 14.
+
+-Since there are no more words to process, the result is "world hello" at the end of the loop.
+-The code returns "world hello" as the final result.
