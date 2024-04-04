@@ -1,0 +1,11 @@
+-The code defines a class Solution with a method maxSubArray that takes an array of integers nums as input and returns an integer.
+
+-Two variables are initialized:
+    -max_so_far: This variable keeps track of the maximum sum found so far. It is initialized with the first element of the input array (nums[0]).
+    -curr_max: This variable keeps track of the maximum sum found at the current position. It is also initialized with the first element of the input array (nums[0]).
+
+-The code then iterates through the input array starting from index 1 (since we've already initialized max_so_far and curr_max with the first element):
+    -For each element at index i, curr_max is updated using the Math.max function. It compares nums[i] (the current element) with the sum of nums[i] and curr_max. This step essentially decides whether to start a new subarray or continue with the current subarray based on which option gives a higher sum.
+    -After updating curr_max, max_so_far is updated using Math.max to keep track of the overall maximum sum found so far.
+    
+-Finally, the method returns max_so_far, which represents the maximum sum of any subarray within the input array nums.
