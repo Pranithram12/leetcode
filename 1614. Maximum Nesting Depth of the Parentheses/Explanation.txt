@@ -1,0 +1,7 @@
+-The code defines a class Solution with a method maxDepth that takes a String parameter s.
+-It initializes two variables curropen and maxopen to track the current depth of parentheses and the maximum depth encountered so far, respectively.
+-It then iterates through each character in the input string s using a for loop.
+-Inside the loop, it checks if the current character is an opening parenthesis '('. If it is, it increments the curropen variable to keep track of the depth.
+-If the character is a closing parenthesis ')', it decrements the curropen variable as a closing parenthesis indicates the end of a nested level.
+-After each character is processed, it updates the maxopen variable using Math.max(maxopen, curropen) to keep track of the maximum depth encountered so far.
+-Finally, it returns the maximum depth (maxopen) after processing the entire input string.
