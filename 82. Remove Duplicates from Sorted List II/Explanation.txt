@@ -1,0 +1,18 @@
+Initialization:
+-ListNode dummy = new ListNode(0);: Create a dummy node with value 0.
+-dummy.next = head;: Set the next node of the dummy node to the head of the input linked list.
+-ListNode prev = dummy;: Initialize a pointer prev to the dummy node.
+
+Iterating through the Linked List:
+-The code uses a while loop to iterate through the linked list until the head node is null.
+-if (head.next != null && head.val == head.next.val): Check if the current node's value is equal to the next node's value and the next node is not null.
+    -If the condition is true, it means there are duplicate values.
+    -The inner while loop is used to skip all nodes whose values are equal to the current node's value, effectively removing duplicates.
+    -After the inner loop, prev.next = head.next; is executed to remove the duplicate nodes by adjusting the next reference of the previous node (prev) to skip the duplicate nodes.
+    -else { prev = prev.next; }: If no duplicates are found, move the prev pointer to the next node.
+
+Moving to the Next Node:
+-After processing each node, move the head pointer to the next node in the linked list (head = head.next;).
+
+Return the Modified List:
+-After the loop finishes, return the modified linked list starting from dummy.next, which skips the dummy node.
