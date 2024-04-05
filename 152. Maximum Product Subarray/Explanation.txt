@@ -1,0 +1,17 @@
+Initialization:
+-leftProduct and rightProduct are initialized to 1. These variables will keep track of the product of elements in the left and right subarrays respectively.
+-maxProduct is initialized to the first element of the input array (nums[0]). This variable will store the maximum product of contiguous subarrays.
+
+Iteration through the array:
+-The code iterates through the input array nums using a for loop.
+-Inside the loop, it checks if leftProduct or rightProduct is 0. If so, it sets them to 1. This step ensures that the product doesn't become 0, which would reset the product calculation for the next subarray.
+
+Product Calculation:
+-For each element nums[i] in the array, leftProduct is updated by multiplying it with nums[i]. This keeps track of the product of elements in the left subarray.
+-Simultaneously, rightProduct is updated by multiplying it with the element at the corresponding position from the end of the array (nums[n - 1 - i]). This keeps track of the product of elements in the right subarray.
+
+Update maxProduct:
+-After updating leftProduct and rightProduct, the code calculates the maximum of maxProduct, leftProduct, and rightProduct using the Math.max method. This ensures that maxProduct always contains the maximum product of contiguous subarrays encountered so far.
+
+Return the Result:
+-Finally, the function returns the maxProduct, which represents the maximum product of contiguous subarrays in the input array nums.
