@@ -1,0 +1,17 @@
+-The rotateRight method takes two parameters: head, which is the head node of the singly-linked list, and k, which represents the number of positions to rotate the list to the right.
+
+-The code first checks if the head is null or if k is 0. If either of these conditions is true, it means there is nothing to rotate, so the method simply returns the head as is.
+
+-It initializes a variable length to 1 (assuming the head is not null) and a reference tail to the head node. These will be used to calculate the length of the linked list.
+
+-It then iterates through the linked list using a while loop, incrementing the length variable and moving tail to the next node until tail.next becomes null, which indicates the end of the list. This loop effectively counts the number of nodes in the list.
+
+-After the loop, the code sets tail.next to head, making the list circular. This step is necessary for the rotation operation.
+
+-Next, it calculates the effective rotation amount by taking the modulus of k with the length of the list (k % length). This ensures that k is within the range of 0 to length - 1, preventing unnecessary rotations.
+
+-It then iterates through the list again to find the new tail node after rotation. The loop runs for length - k - 1 iterations, positioning newtail at the node that will become the new tail after rotation.
+
+-After finding the new tail, it updates head to point to newtail.next, which becomes the new head of the rotated list. It then sets newtail.next to null, breaking the circular structure and finalizing the rotation.
+
+-Finally, the method returns the new head of the rotated list.
