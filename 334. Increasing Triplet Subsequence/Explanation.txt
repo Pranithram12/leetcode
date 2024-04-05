@@ -1,0 +1,13 @@
+-The increasingTriplet method takes an array of integers nums as input and returns a boolean value indicating whether there exists an increasing triplet in the array.
+
+-Two variables i and j are initialized with the maximum possible integer value (Integer.MAX_VALUE). These variables are used to keep track of two elements in the array that form a potential increasing triplet.
+
+-The code then iterates through the elements of the array using a for loop.
+
+-Inside the loop, it checks if the current element nums[in] is less than or equal to i. If it is, it updates i to be equal to nums[in]. This is done to ensure that i always stores the smallest value encountered so far in the array.
+
+-If the current element nums[in] is greater than i but less than or equal to j, it updates j to be equal to nums[in]. This is done to ensure that j always stores the second smallest value encountered so far in the array.
+
+-If the current element nums[in] is greater than both i and j, it means that there exists an increasing triplet in the array (i < j < nums[in]), and the method returns true.
+
+-If the loop completes without finding an increasing triplet, the method returns false.
