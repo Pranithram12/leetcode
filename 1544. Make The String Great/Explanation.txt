@@ -1,0 +1,20 @@
+StringBuilder Initialization:
+-StringBuilder ans = new StringBuilder();: A StringBuilder ans is initialized to store the resulting string after processing.
+
+Convert String to Character Array:
+-char[] chars = s.toCharArray();: The input string s is converted into a character array chars. This is done to easily access individual characters in the string.
+
+Loop Through Characters:
+-for (int i = 0; i < chars.length; i++) {: This loop iterates through each character in the character array chars.
+
+Check for Adjacent Characters:
+-char ch = chars[i];: Retrieves the current character ch being processed.
+-int len = ans.length();: Retrieves the length of the current result string ans.
+-if (len > 0 && Math.abs(ans.charAt(len - 1) - ch) == 32) {: Checks if the current character ch and the last character in ans have ASCII values that differ by 32. This condition implies that they are uppercase and lowercase versions of the same letter.
+    -ans.deleteCharAt(len - 1);: If the condition is true, the last character in ans is removed because it forms a pair that cancels out.
+
+Append Characters to Result:
+-else { ans.append(ch); }: If the current character ch does not form a pair that cancels out with the last character in ans, it is appended to ans.
+
+Return the Result:
+-return ans.toString();: Finally, the StringBuilder ans is converted back to a string using toString() and returned as the result of the makeGood method.
