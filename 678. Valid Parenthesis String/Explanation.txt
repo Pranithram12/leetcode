@@ -1,0 +1,17 @@
+-The checkValidString method takes a string s as input and returns a boolean indicating whether the string is valid in terms of parentheses.
+
+-Two variables, low and high, are initialized to keep track of the lower and upper bounds of the number of valid '(' characters.
+
+-The code iterates through each character in the string using a for-each loop.
+
+-Inside the loop, there's a switch-case statement to handle three types of characters: '(' (opening parenthesis), ')' (closing parenthesis), and '*' (asterisk).
+
+-When encountering an opening parenthesis '(', both low and high are incremented.
+
+-When encountering a closing parenthesis ')', low is decremented if it's greater than 0 (ensuring it doesn't go negative), and high is decremented.
+
+-When encountering an asterisk '', low is decremented if it's greater than 0 (ensuring it doesn't go negative), and high is incremented. This is because '' can act as either '(' or ')'.
+
+-If at any point high becomes negative (meaning there are more closing parentheses than opening parentheses), the method immediately returns false, indicating an invalid string.
+
+-Finally, the method checks if low is zero, which means all opening parentheses have been matched with closing parentheses, and returns true if so, indicating a valid string.
