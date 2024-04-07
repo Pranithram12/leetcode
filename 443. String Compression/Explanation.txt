@@ -1,0 +1,15 @@
+-The compress method takes an array of characters (chars) as input and returns an integer.
+
+-It uses two pointers, idx and i, initialized to 0, to track the current index being processed and the start of the current sequence, respectively.
+
+-The code uses a while loop that continues until i reaches the end of the array.
+
+-Within the loop, it initializes another pointer j to i and advances j until it reaches a different character or the end of the array.
+
+-It then calculates the length of the current sequence (len) by subtracting i from j.
+
+-If the length is greater than 1, it converts the length to a string s and iterates through each character of s, adding it to the chars array at index idx and incrementing idx.
+
+-After processing the current sequence, it updates i to j to move to the next sequence.
+
+-Finally, it returns the updated value of idx, which represents the length of the compressed array.
