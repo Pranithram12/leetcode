@@ -1,0 +1,21 @@
+Initialization:
+-Two new linked lists are created: smallervalue and greatervalue.
+-Two pointers small and greater are initialized to point to the head of their respective lists.
+
+Traversing the Input List:
+-The code iterates through the input linked list head using a while loop until head becomes null.
+-For each node in the input list:
+    -If the node's value is less than the given threshold x, it's appended to the smallervalue list.
+    -Otherwise, it's appended to the greatervalue list.
+
+Partitioning the Lists:
+-After traversing the input list, the greater.next is set to null to terminate the greatervalue list.
+-The small.next pointer is then set to point to the head of the greatervalue list, effectively joining the two lists.
+
+Returning the Result:
+-The method returns the head of the smallervalue list, which contains all nodes with values less than x followed by nodes with values greater than or equal to x.
+
+Here's a breakdown of how the code achieves the partitioning:
+-It uses two separate lists to hold nodes with values less than x and nodes with values greater than or equal to x.
+-While traversing the input list, it appends nodes to either smallervalue or greatervalue based on their values.
+-Finally, it combines the two lists by setting the small.next pointer to the head of the greatervalue list.
