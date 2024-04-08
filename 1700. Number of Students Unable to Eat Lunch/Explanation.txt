@@ -1,0 +1,13 @@
+Counting Sandwiches:
+-The first for loop iterates through the students array. For each student, it checks if they prefer a circular sandwich (0) or a square sandwich (1) and increments the respective counter (circlesandwitch or squaresandwitch).
+
+Checking Preferences:
+-The second for loop iterates through the sandwiches array. For each sandwich, it checks if the sandwich type matches the available preferences and the corresponding sandwich count is not zero.
+-If a student's preferred sandwich is not available, the loop returns the count of the other type of sandwich that is available.
+-If both types of sandwiches are available, it returns the count of the preferred type based on the last preference in the array.
+
+Adjusting Counts:
+-Inside the loop, if the current sandwich type matches a student's preference, it decrements the count of that type of sandwich (circlesandwitch or squaresandwitch).
+
+Returning Zero:
+-If all students get their preferred sandwiches, the loop exits, and the function returns 0, indicating that there are no remaining sandwiches or students who didn't get their choice.
