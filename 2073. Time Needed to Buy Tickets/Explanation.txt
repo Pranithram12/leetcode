@@ -1,0 +1,13 @@
+Initialization:
+-Initialize the time variable to 0.
+
+While Loop:
+-The while loop continues until the person at position k has bought all their tickets (i.e., tickets[k] becomes 0).
+
+For Loop Inside While Loop:
+-Within each iteration of the while loop, a for loop iterates through all people in the queue.
+-If the person at position k has already bought all their tickets (tickets[k] == 0), the for loop breaks, and the while loop continues.
+-Otherwise, if the person at position i still has tickets to buy (tickets[i] != 0), the code decrements the number of tickets the person at position i has (tickets[i] -= 1) and increments the time variable to count the time taken to buy that ticket.
+
+Return Time:
+-After the while loop finishes (when tickets[k] becomes 0), the code returns the total time taken (time) for the person at position k to finish buying tickets.
