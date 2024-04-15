@@ -1,0 +1,16 @@
+trap Method:
+-This method takes an integer array height as input, where each element represents the height of a bar.
+-If the array is empty (height.length == 0), the method returns 0 because there are no bars to trap rainwater.
+-An integer variable ans is initialized to 0, which will store the total amount of trapped rainwater.
+-Two pointers l (initialized to 0) and r (initialized to height.length - 1) are used to traverse the array from left to right and right to left, respectively.
+-Two variables maxL and maxR are initialized to store the maximum height encountered from the left (maxL) and right (maxR) sides.
+
+Main Loop:
+-The main logic of trapping rainwater is implemented within a while loop (while (l < r)).
+-Inside the loop, it checks which side has the smaller maximum height (maxL or maxR).
+-If maxL is smaller than maxR, it means the left side is lower, so it calculates the amount of water that can be trapped at the current position l and updates maxL accordingly.
+-If maxR is smaller than or equal to maxL, it means the right side is lower or equal, so it calculates the amount of water that can be trapped at the current position r and updates maxR accordingly.
+-In each iteration, it adds the amount of trapped water (difference between the maximum height and the height of the current bar) to the ans variable.
+
+Returning the Result:
+-After traversing the entire array and calculating the trapped water at each position, the method returns the final result stored in ans.
