@@ -1,0 +1,23 @@
+maximalRectangle Method:
+-This method takes a 2D character array (char[][] matrix) representing a binary matrix as input and returns an integer, which represents the area of the maximal rectangle in the matrix.
+-The first check in the method is to see if the matrix is empty (matrix.length == 0). If so, the method returns 0 because there are no elements in the matrix.
+-An integer variable ans is initialized to 0, which will store the maximum area found.
+-An integer array hist is created with a length equal to the number of columns in the matrix (matrix[0].length). This array will store the heights of the histogram for each column.
+
+Processing Each Row:
+-The code iterates through each row in the matrix using an enhanced for loop (for (char[] row : matrix)).
+-Within each row, another loop iterates through each element in the row.
+-For each element, if it is '0', the corresponding height in the hist array is set to 0. Otherwise, it increments the height by 1 (hist[i] = row[i] == '0' ? 0 : hist[i] + 1).
+
+Calculating Maximal Rectangle:
+-After updating the histogram heights for the current row, the code calls a helper method largestRectangleArea(hist) to find the largest rectangle area using the heights stored in the hist array.
+-The result of largestRectangleArea(hist) is compared with the current maximum area (ans), and the larger value is assigned back to ans using Math.max(ans, largestRectangleArea(hist)).
+
+largestRectangleArea Method:
+-This method calculates the largest rectangle area given an array of heights (heights).
+-It initializes an integer variable ans to store the maximum area and creates a stack (Deque<Integer> stack) to keep track of indices.
+-The method iterates through the heights array, and for each height, it checks if the stack is not empty and if the current height is less than the height at the index at the top of the stack.
+-If the current height is less than the height at the top of the stack, it calculates the area of the rectangle using the popped height as the height (h) and the difference between the current index i and the index at the top of the stack as the width (w).
+-It updates ans with the maximum area found so far.
+-The method then pushes the current index i onto the stack.
+-Finally, the method returns the maximum area (ans).
