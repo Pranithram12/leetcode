@@ -1,0 +1,19 @@
+TreeNode Class:
+-The TreeNode class is a standard binary tree node representation, with each node having an integer value (val) and references to its left and right children (left and right).
+
+Solution Class:
+-The Solution class contains the sumNumbers method, which calculates the sum of numbers formed by root-to-leaf paths in a binary tree.
+-It also contains the getLeafSum method, which is a helper method used for recursive traversal and sum calculation.
+
+sumNumbers Method:
+-This method initializes a variable sum to store the total sum of numbers formed by root-to-leaf paths.
+-It calls the getLeafSum method to traverse the tree and calculate the sum, passing the root node and an initial current number value of 0.
+
+getLeafSum Method:
+-This method performs a depth-first search (DFS) traversal of the binary tree.
+-It takes two parameters: the current node root being processed and the current number currNum formed by the path from the root to the current node.
+-If the current node is null, it returns 0 (since there is no value to add to the sum).
+-Otherwise, it updates currNum by multiplying it by 10 and adding the value of the current node (currNum = currNum * 10 + root.val).
+-If the current node is a leaf node (i.e., it has no left or right child), it returns the currNum, which represents the number formed by the path from the root to this leaf node.
+-If the current node is not a leaf node, it recursively calculates the sum of numbers for its left and right subtrees by calling getLeafSum on them.
+-Finally, it returns the sum of the numbers calculated for the left and right subtrees (leftSum + rightSum), which represents the total sum of numbers formed by root-to-leaf paths in the subtree rooted at the current node.
