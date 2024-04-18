@@ -1,0 +1,18 @@
+Method Signature:
+-public int islandPerimeter(int[][] grid): This method takes a 2D array grid as input and returns an integer representing the perimeter of the island.
+
+Variables:
+-rows and cols: These variables store the number of rows and columns in the grid, respectively.
+-count: This variable keeps track of the perimeter count.
+
+Nested Loops:
+-The code uses nested loops to iterate through each cell in the grid.
+
+Perimeter Calculation:
+-Inside the nested loops, it checks if the current cell contains land (value 1).
+-For each land cell, it checks the adjacent cells to determine the perimeter.
+-For the cell above (up), it checks if the current row is not the first row (row > 0) and if the cell above is water (grid[row - 1][col] == 0) or if the current cell is in the first row (row == 0). If so, it increments the count by 1.
+-Similarly, it checks the cell to the right (right), the cell below (down), and the cell to the left (left) using similar conditions.
+
+Return Statement:
+-After calculating the perimeter, the method returns the count value, which represents the total perimeter of the island.
