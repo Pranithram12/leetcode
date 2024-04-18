@@ -1,0 +1,20 @@
+Method Signature:
+-public TreeNode addOneRow(TreeNode root, int v, int d): This method takes three parameters: the root of the binary tree (root), the value to be added in the new nodes (v), and the depth at which to add the new row (d). It returns the modified root of the tree after adding the new row.
+
+Handling Depth 1:
+-If the depth d is 1, it means the new row should be added as the new root. In this case, it creates a new TreeNode with value v (newRoot) and sets its left child to the current root. Then it returns newRoot, making it the new root of the tree.
+
+Traversing the Tree:
+-If the depth is greater than 1 (d > 1), it initializes a queue q (using ArrayDeque) to perform a level-order traversal of the tree.
+-It starts with a depth of 0 and enqueues the root node into the queue.
+Level-Order Traversal and Adding Nodes:
+-It continues traversing the tree level by level using a loop until either the specified depth d is reached or the queue becomes empty.
+-At each level, it processes all nodes in the queue for that level (for (int sz = q.size(); sz > 0; --sz)).
+-If the current depth is equal to d - 1, it means the next level is the one where the new nodes with value v should be added.
+    -It saves the left and right children of each node at this depth (cachedLeft and cachedRight) to preserve the existing structure.
+    -It creates new nodes with value v and sets them as the left and right children of the current node.
+    -It connects the preserved left child (cachedLeft) to the left child of the newly added left node and does the same for the right child.
+-After processing all nodes at the current level, it increments the depth.
+
+Returning the Modified Tree:
+-Once the loop completes or breaks (if the specified depth is reached), it returns the root of the modified tree, which now includes the new row added at depth d.
