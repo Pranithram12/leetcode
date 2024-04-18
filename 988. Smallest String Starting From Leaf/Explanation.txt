@@ -1,0 +1,21 @@
+Method Signature:
+-public String smallestFromLeaf(TreeNode root): This method takes the root of the binary tree as input and returns the lexicographically smallest string representing the path from the root to a leaf node.
+
+Variables:
+-private String ans = null;: This variable ans stores the result string, initialized to null.
+
+Depth-First Search (DFS):
+-The code uses a depth-first search (DFS) approach to traverse the tree recursively.
+
+DFS Helper Function (dfs):
+-private void dfs(TreeNode root, StringBuilder sb): This helper function takes the current node root and a StringBuilder sb to build the path string.
+-If the current node is null, the function returns without further processing.
+-It appends the character corresponding to the current node's value to the StringBuilder.
+-If the current node is a leaf node (both left and right children are null), it reverses the StringBuilder (sb.reverse().toString()) to get the path from the root to the leaf.
+    -It checks if ans is null (no previous result) or if the current path is lexicographically smaller than ans. If so, it updates ans with the current path.
+-The function then recursively calls itself for the left and right children of the current node.
+-After exploring the left and right subtrees, it removes the last character from the StringBuilder to backtrack (sb.deleteCharAt(sb.length() - 1)).
+
+Main Function (smallestFromLeaf):
+-The main function initializes a StringBuilder and calls the dfs function with the root node and the empty StringBuilder.
+-After the DFS traversal completes, it returns the value of ans, which holds the lexicographically smallest path from the root to a leaf node.
