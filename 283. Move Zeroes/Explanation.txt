@@ -1,0 +1,17 @@
+Initialization:
+-insertpos is initialized to 0. This variable keeps track of the position where non-zero elements should be inserted into the array.
+
+Iterating Through the Array:
+-The code uses a for loop to iterate through the input array nums.
+-For each element at index i:
+    -If the element is not equal to zero (nums[i] != 0), it's a non-zero element that needs to be moved to the beginning of the array.
+    -The non-zero element is then placed at the insertpos index in the array, and insertpos is incremented by 1.
+
+Filling Remaining Positions:
+-After processing all non-zero elements, there might be remaining positions in the array where zeros need to be placed.
+-The code uses a while loop to fill the remaining positions in the array with zeros.
+-This loop continues until insertpos reaches the length of the array (nums.length).
+-At each iteration, the element at insertpos is set to zero, and insertpos is incremented.
+
+Result:
+-After the loop completes, all non-zero elements have been moved to the beginning of the array in their original order, and the remaining positions in the array are filled with zeros.

@@ -1,0 +1,20 @@
+Variables:
+-n and m are initialized as class variables to store the dimensions of the grid.
+-n represents the number of rows, and m represents the number of columns.
+
+numIslands Method:
+-Takes a 2D character array grid as input.
+-Sets n and m to the dimensions of the grid.
+-Initializes count to 0, which will store the count of islands.
+-Iterates through each cell in the grid using nested loops.
+    -If the cell value is '1' (land), it calls the dfs method to explore and mark all connected land cells as visited, then increments count (indicating a new island).
+
+dfs Method:
+-Takes the grid grid, current row index i, and current column index j as parameters.
+-Checks if the current cell is out of bounds (i<0 || i>=n || j<0 || j>=m). If so, it returns, as there's nothing to explore beyond the grid boundaries.
+-Checks if the current cell represents water (grid[i][j] == '0') or has already been visited (grid[i][j] == '2'). If so, it returns, as there's no need to explore water or already visited cells.
+-Marks the current cell as visited by setting it to '2' (grid[i][j]='2').
+-Recursively calls dfs on the adjacent cells (up, right, down, left) to explore further.
+
+
+The DFS algorithm works by visiting adjacent cells of each '1' cell encountered in the numIslands method. It marks visited cells as '2' to avoid revisiting them. By doing this, it effectively explores and counts distinct connected regions of '1' cells, which represent islands in the grid. The count of such regions gives the total number of islands in the grid.

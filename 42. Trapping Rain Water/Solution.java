@@ -9,15 +9,16 @@ class Solution {
       int maxL = height[l];
       int maxR = height[r];
   
-      while (l < r)
+      while (l < r){
         if (maxL < maxR) {
           ans += maxL - height[l];
           maxL = Math.max(maxL, height[++l]);
-        } else {
+        } 
+        else {
           ans += maxR - height[r];
           maxR = Math.max(maxR, height[--r]);
         }
-  
+      }
       return ans;
     }
   }

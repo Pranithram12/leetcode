@@ -1,0 +1,29 @@
+Node Class:
+-This class represents a node in the doubly linked list. Each node contains a key-value pair and references to the previous and next nodes.
+
+LRUCache Class:
+-Fields:
+    -map: An array of Nodes representing the cache entries. The size is set to 10,001 (10_000 + 1) to accommodate key values from 0 to 10,000.
+    -count: Tracks the current number of elements in the cache.
+    -capacity: Specifies the maximum capacity of the cache.
+    -head and tail: Dummy nodes at the beginning and end of the linked list, respectively.
+-Constructor (LRUCache(int capacity)):
+    -Initializes the cache with the given capacity.
+    -Creates an array map to store cache entries.
+    -Initializes head and tail nodes and links them together.
+-deleteNode Method:
+    -Removes a node from the linked list.
+    -Adjusts the references of the neighboring nodes to skip the node being deleted.
+-addToHead Method:
+    -Adds a node to the beginning of the linked list (right after the head node).
+    -Adjusts the references of the neighboring nodes to include the new node.
+-get Method:
+    -Retrieves the value associated with a key from the cache.
+    -If the key exists, moves the corresponding node to the head of the list (indicating it's the most recently used).
+    -Returns the value or -1 if the key is not found.
+-put Method:
+    -Adds or updates a key-value pair in the cache.
+    -If the key exists, updates its value and moves the corresponding node to the head of the list.
+    -If the key doesn't exist:
+        -If the cache is not full, adds the new node to the head of the list.
+        -If the cache is full, removes the least recently used node (at the tail), adds the new node to the head.
