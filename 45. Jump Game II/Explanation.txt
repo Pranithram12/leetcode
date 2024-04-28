@@ -1,0 +1,17 @@
+Initialization:
+-totalJumps: Initializes a variable to keep track of the total number of jumps required.
+-destination: Sets the destination index to the last index of the nums array.
+-coverage: Tracks the maximum reachable index after each jump.
+-lastJumpIdx: Indicates the index where the last jump occurred.
+-Checks if the length of the nums array is 1. If so, directly returns 0 jumps because there's no need to jump.
+-Iterating through the Array:
+-The loop iterates through each index of the nums array.
+Updating Coverage:
+-Calculates the maximum reachable index (coverage) by taking the maximum value between the current coverage and the sum of the current index i and its value nums[i].
+Checking for Jump Opportunity:
+-Checks if the current index i is equal to the lastJumpIdx, indicating that a jump can be made from the last jump point.
+-Updates lastJumpIdx to the new coverage index (coverage).
+-Increments totalJumps to count the number of jumps made.
+-Checks if the coverage is greater than or equal to the destination index. If so, returns the total number of jumps made (totalJumps), as the destination has been reached.
+Returning Total Jumps:
+-If the loop completes without reaching the destination, it returns the total number of jumps made (totalJumps).

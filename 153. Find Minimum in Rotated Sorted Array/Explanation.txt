@@ -1,0 +1,13 @@
+Initialization:
+-Initializes l to 0, representing the leftmost index of the array.
+-Initializes r to nums.length - 1, representing the rightmost index of the array.
+Binary Search Loop:
+-Enters a while loop that continues until l is no longer less than r.
+-Calculates the middle index m as (l + r) / 2.
+Comparing Values:
+-Checks if nums[m] (value at the middle index) is less than nums[r] (value at the rightmost index).
+    -If true, it means that the right half of the array is sorted in ascending order, and the pivot (minimum value) must be on the left side of m. Therefore, it updates r to m, narrowing down the search range to the left half.
+    -If false, it means that the left half of the array is sorted in ascending order, and the pivot (minimum value) must be on the right side of m. Therefore, it updates l to m + 1, narrowing down the search range to the right half.
+Returning Minimum Value:
+-Once the while loop exits (when l >= r), it means that l has converged to the index containing the minimum value.
+-Returns nums[l], which is the minimum value found during the binary search.

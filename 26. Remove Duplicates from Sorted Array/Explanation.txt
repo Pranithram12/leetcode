@@ -1,0 +1,14 @@
+Method Signature:
+-public int removeDuplicates(int[] nums): This method takes an integer array nums as input and returns an integer representing the count of unique elements in the array after removing duplicates.
+Initialization:
+-int count = 0;: Initializes a variable count to keep track of the number of unique elements.
+Looping through the Array:
+-for(int i = 0; i < nums.length; i++) { ... }: Iterates through each element of the input array nums.
+Duplicate Checking:
+-if(i < nums.length - 1 && nums[i] == nums[i+1]) { ... }: Checks if the current element is equal to the next element, ensuring that we don't go out of bounds when accessing nums[i+1].
+Handling Duplicates:
+-continue;: Skips the current iteration if the current element is a duplicate, as indicated by the condition nums[i] == nums[i+1].
+Unique Element Handling:
+-else { nums[count] = nums[i]; count++; }: If the current element is not a duplicate, it is copied to the position indicated by count in the array nums. Then, count is incremented to indicate the addition of a unique element.
+Return Count:
+-return count;: Finally, the method returns the value of count, which represents the count of unique elements in the array after removing duplicates.

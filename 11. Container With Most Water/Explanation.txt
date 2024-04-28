@@ -1,0 +1,15 @@
+Initialization:
+-The maxArea method takes an array of integers height as input, representing the heights of vertical lines.
+-It initializes three variables: left (starting from index 0), right (starting from the last index), and maxarea (initially set to 0 to track the maximum area).
+Finding Maximum Area:
+-The code uses a while loop that continues as long as left is less than right. This loop is crucial for exploring all possible combinations of two vertical lines.
+-Within the loop, it calculates the height of the smaller vertical line (heightlength) between height[left] and height[right] using Math.min(height[left], height[right]).
+-It then calculates the width of the area (width) between the two lines as right - left.
+-The area of the rectangle formed by these two lines is calculated as area = heightlength * width.
+-It updates maxarea to the maximum value between the current area and the existing maxarea using Math.max(area, maxarea).
+Moving Pointers:
+-After calculating the area, it compares the heights of the vertical lines at left and right.
+-If height[left] is less than height[right], it means the area might be increased by moving left to the right, so it increments left.
+-If height[left] is greater than or equal to height[right], it means the area might be increased by moving right to the left, so it decrements right.
+Returning Maximum Area:
+-Once the loop finishes (when left is no longer less than right), it returns the maximum area (maxarea) calculated during the loop.

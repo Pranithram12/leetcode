@@ -1,0 +1,11 @@
+Initialization:
+-int candidate = nums[0];: Initializes the variable candidate to the first element of the array nums. This element is assumed to be the majority element initially.
+-int count = 1;: Initializes the variable count to 1, indicating that we have seen the candidate once.
+Iterating through the Array:
+-The code uses a loop to iterate through the array nums, starting from index 1 (i = 1).
+Finding the Majority Element:
+-Inside the loop, it checks if count is 0. If so, it updates the candidate to the current element nums[i] and resets the count to 1. This happens when we have exhausted all previous occurrences of the previous candidate.
+-If count is not 0, it checks if the current element nums[i] is equal to the candidate. If they are equal, it increments the count, indicating another occurrence of the candidate.
+-If the current element is different from the candidate, it decrements the count. This step essentially cancels out one occurrence of the candidate against a different element.
+Returning the Majority Element:
+-After the loop completes, the variable candidate holds the element that appears more than n/2 times in the array, where n is the length of the array. This element is returned as the majority element.

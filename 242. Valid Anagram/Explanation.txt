@@ -1,0 +1,10 @@
+Normalization:
+-Both s and t are converted to lowercase using s.toLowerCase() and t.toLowerCase(). This step ensures case insensitivity in the comparison.
+-Spaces are removed from both strings using s.replace(" ","") and t.replace(" ",""). This step removes spaces from consideration in the anagram check.
+Counting Characters:
+-An integer array counts of size 26 is used to count the occurrences of characters. Each index in the array corresponds to a letter of the alphabet (assuming only lowercase letters are present in the strings).
+-The first loop iterates through the characters of string s. For each character, it increments the count at the corresponding index in the counts array.
+-The second loop iterates through the characters of string t. For each character, it decrements the count at the corresponding index in the counts array.
+Checking Anagram Condition:
+-After both loops, the code checks each count in the counts array. If any count is not zero, it means that there are different counts of a particular character in s and t, indicating they are not anagrams. In this case, the code returns false.
+-If all counts are zero, it means that both strings have the same characters with the same frequencies, satisfying the anagram condition, and the code returns true.

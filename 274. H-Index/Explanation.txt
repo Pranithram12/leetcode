@@ -1,0 +1,16 @@
+Initialization:
+-n: Stores the length of the citations array, representing the number of papers.
+-arr: Initializes a new integer array arr with a length of n+1. This array will store the count of papers with citations equal to or greater than their index.
+Counting Citations:
+-The code iterates through each citation c in the citations array.
+-If c is greater than n, it means the citation count exceeds the number of papers. In this case, it increments arr[n] to count the number of papers with citations greater than n.
+-Otherwise, it increments arr[c] to count the number of papers with citations equal to c.
+Calculating H-Index:
+-Initializes count to track the cumulative count of papers with citations greater than or equal to the current index.
+-The code then iterates backward from n to 0.
+-At each index i, it adds the count of papers with citations equal to or greater than i to count.
+-If count becomes greater than or equal to i, it means there are at least i papers with citations of i or more, which fulfills the definition of the H-Index. In this case, it returns i.
+-If the loop completes without finding an H-Index meeting the condition, it returns 0.
+Returning H-Index or 0:
+-If an H-Index is found during the loop, it returns that index.
+-If no H-Index is found (i.e., all papers have citations less than their index), it returns 0.

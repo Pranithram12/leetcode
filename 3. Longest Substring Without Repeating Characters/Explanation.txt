@@ -1,0 +1,15 @@
+Initialization:
+-maxLength is initialized to 0, which will store the length of the longest substring without repeating characters.
+-charIndex is an array of size 128, representing ASCII characters. Each element stores the index of the last occurrence of the corresponding character in the string s.
+Setting Initial Values:
+-Initially, all elements of charIndex are set to -1 to indicate that no character has been encountered yet.
+Sliding Window Approach:
+-The algorithm uses a sliding window approach with two pointers, start and end, to track the substring without repeating characters.
+-The start pointer indicates the start of the current substring, and the end pointer iterates through the string.
+Iterating Through the String:
+-For each character charAscii at index end in the string s, the algorithm performs the following steps:
+    -If the character has been seen before (i.e., charIndex[charAscii] >= start), it updates the start pointer to the index after the last occurrence of the character.
+    -Updates the charIndex array with the current index end for the character charAscii.
+    -Calculates the length of the current substring without repeating characters (end - start + 1) and updates maxLength if necessary using Math.max.
+Returning the Result:
+-After processing all characters in s, the algorithm returns maxLength, which represents the length of the longest substring without repeating characters.

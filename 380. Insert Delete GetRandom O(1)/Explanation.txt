@@ -1,0 +1,19 @@
+Initialization:
+-ArrayList<Integer> nums: Stores the elements of the set.
+-HashMap<Integer, Integer> locs: Maps elements to their indices in the nums list.
+-Random random: Used for generating random indices when retrieving a random element.
+Constructor:
+-Initializes the nums list and the locs map when a RandomizedSet object is created.
+Insertion (insert method):
+-Checks if the element to be inserted (val) already exists in the set by checking if it's in the locs map.
+-If val is not in locs, it adds val to the end of nums and maps its index to locs.
+-Returns true if insertion is successful, false if the element already exists in the set.
+Removal (remove method):
+-Checks if the element to be removed (val) exists in the set by checking if it's in the locs map.
+-If val is in locs, it retrieves its location/index from locs.
+-If location is not the last index in nums, it swaps val with the last element in nums to maintain continuous indices.
+-Removes val from nums and its mapping from locs.
+-Returns true if removal is successful, false if the element does not exist in the set.
+Random Element Retrieval (getRandom method):
+-Generates a random index within the range of valid indices in nums using random.nextInt(nums.size()).
+-Returns the element at the randomly generated index from nums.

@@ -1,0 +1,11 @@
+Modulo Operation on k:
+-k = k % nums.length;: Calculates the effective number of steps required for rotation by taking the modulo of k with the length of the array nums. This ensures that k is within the range of valid indices in the array.
+Reverse Operations:
+-reverse(nums, 0, n-1);: Reverses the entire array. This step effectively places the last k elements at the beginning of the array and shifts the other elements to the right.
+-reverse(nums, 0, k-1);: Reverses the first k elements in the partially rotated array. This action moves the last k elements to the end of the array.
+-reverse(nums, k, n-1);: Reverses the remaining elements after the first k elements in the partially rotated array. This step ensures that the elements between indices k and n-1 are also rotated.
+Reverse Method:
+-public void reverse(int[] nums, int start, int end) { ... }: This method reverses a portion of the array specified by the start and end indices.
+-Inside the reverse method, it uses a while loop with two pointers (start and end) to swap elements from the start and end of the specified portion until they meet in the middle. This effectively reverses the elements in that portion of the array.
+Overall Rotation:
+-After performing the three reverse operations, the array nums is rotated by k steps to the right.

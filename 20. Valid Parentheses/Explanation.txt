@@ -1,0 +1,14 @@
+Initialization:
+-The code initializes an integer variable n to store the length of the string s.
+-It creates a character array stack of size n to act as a stack for storing opening brackets/braces encountered in the string.
+-It initializes an integer variable pos to keep track of the current position in the stack.
+Stack-Based Validation:
+-The code iterates through each character c in the string s using a for-each loop.
+-If c is an opening bracket ('(', '[', '{'), it is pushed onto the stack (stack[pos] = c) and pos is incremented (pos++).
+Checking Closing Brackets/Braces:
+-If c is a closing bracket/brace (')', ']', '}'), the code checks whether the stack is empty (pos == 0). If it is, this means there is no corresponding opening bracket/brace for c, making the string invalid, and the code returns false.
+-If the stack is not empty, the code checks whether the top of the stack (at position pos - 1) matches the expected opening bracket/brace for c. If they do not match, the string is invalid, and the code returns false.
+-If the stack top matches the expected opening bracket/brace, the code decrements pos (pos--) to simulate popping the opening bracket/brace from the stack.
+Final Check:
+-After processing all characters in the string, the code checks if the stack is empty (pos == 0). If it is, this indicates that all opening brackets/braces have been properly matched and closed, making the string valid. The code returns true.
+-If the stack is not empty, it means there are unmatched opening brackets/braces remaining, making the string invalid, and the code returns false.

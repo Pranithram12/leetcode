@@ -1,0 +1,11 @@
+Initialization:
+-count is initialized to 0. This variable will track the number of elements remaining in the array after removing elements equal to val.
+-The for loop iterates through each element of the nums array, starting from index 0 and ending at index nums.length - 1.
+Check and Remove:
+-Within the loop, it checks if the current element nums[i] is not equal to the value val that needs to be removed.
+-If nums[i] is not equal to val, it means this element should be kept in the array.
+-It then assigns nums[i] to the position indicated by count in the array (nums[count] = nums[i]) and increments count.
+    -This effectively shifts non-val elements towards the beginning of the array, overwriting positions where val elements were found.
+Return Count:
+-After the loop completes, count represents the number of elements in the modified array where val is not present.
+-It returns count, which is the length of the array after removing all instances of val.

@@ -1,0 +1,14 @@
+Duplication Check:
+-The code starts by checking if the array's length is less than 3. If so, it directly returns the length because there cannot be any duplicates to remove in such a short array.
+Index Initialization:
+-It initializes an index variable to 2. This index will be used to track the position in the array where non-duplicate elements will be stored.
+Iterating through the Array:
+-Starting from index 2, the code loops through the array. This index is chosen because the first two elements are considered non-duplicates by default.
+Identifying Non-Duplicates:
+-At each step, it checks if the current element is different from the element two positions behind the current index. If they are not equal, it means the current element is a non-duplicate.
+Updating the Array:
+-When a non-duplicate is found, it is placed in the array at the position indicated by the index variable. This effectively removes duplicates beyond the first two occurrences because only non-duplicates are stored in the array.
+Counting Unique Elements:
+-The index variable, which is incremented whenever a non-duplicate is found, effectively represents the count of unique elements in the array after duplicates are removed.
+Returning the Result:
+-Finally, the method returns this count of unique elements, providing the desired result of the operation.

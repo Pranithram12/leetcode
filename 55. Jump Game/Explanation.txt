@@ -1,0 +1,10 @@
+Initialization:
+-int finalPosition = nums.length - 1;: Initializes the variable finalPosition to the last index of the nums array. This represents the farthest position that can be reached initially.
+Iterating Backward:
+-The loop starts from the second-to-last index (indx = nums.length - 2) and iterates backward through the array (indx >= 0).
+Updating Final Position:
+-Checks if the current index plus the value at that index (indx + nums[indx]) is greater than or equal to the finalPosition.
+-If true, it updates finalPosition to the current index (finalPosition = indx). This update indicates that the current index is a position from where the final position can be reached.
+Checking Reachability:
+-After the loop, it checks if finalPosition is equal to 0 (if(finalPosition == 0)). If finalPosition is 0, it means that starting from the first index, it's possible to jump to the last index, covering all intermediate positions. In this case, it returns true, indicating that the jump is possible to reach the end.
+-If finalPosition is not 0, it means that there are some gaps in the coverage of positions, and it returns false, indicating that it's not possible to reach the end from the start.

@@ -1,0 +1,22 @@
+Initial Setup:
+-left is set to 0, representing the leftmost index of the array.
+-right is set to nums.length - 1, representing the rightmost index of the array.
+Binary Search:
+-The code uses a binary search approach to find the target value within the nums array.
+-The search is performed within the indices left and right.
+Binary Search Steps:
+-While left is less than or equal to right, the search continues.
+-Calculate the middle index mid as (left + right) / 2.
+-Check if the value at index mid equals the target. If so, return mid.
+Handling Sorted Subarrays:
+-Determine which part of the array is sorted (either nums[left..mid] or nums[mid+1..right]).
+-If nums[left] <= nums[mid], then the left half (nums[left..mid]) is sorted.
+    -Check if the target falls within this sorted range.
+        -If yes and the target is smaller than nums[mid], update right to mid - 1 to search in the left half.
+        -If no or the target is greater than or equal to nums[mid], update left to mid + 1 to search in the right half.
+-If nums[left] > nums[mid], then the right half (nums[mid+1..right]) is sorted.
+    -Check if the target falls within this sorted range.
+        -If yes and the target is greater than nums[mid], update left to mid + 1 to search in the right half.
+        -If no or the target is smaller than or equal to nums[mid], update right to mid - 1 to search in the left half.
+Return Result:
+-If the target is not found after the binary search completes (left becomes greater than right), return -1 indicating that the target is not present in the array.

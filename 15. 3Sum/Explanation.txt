@@ -1,0 +1,18 @@
+Initialization:
+-The threeSum method takes an array of integers nums as input.
+-It first checks if the array is null or its length is less than 3. If so, it returns an empty ArrayList, as you cannot form triplets with less than three elements.
+Sorting:
+-If the array has three or more elements, it sorts the array in ascending order using Arrays.sort(nums). Sorting the array is crucial for efficiently finding triplets that sum up to zero.
+Iterating through the Array:
+-The code uses a loop to iterate through the sorted array from index 0 to nums.length - 3. This loop is essential for selecting the first element of the triplet (nums[i]).
+-Inside this loop, two pointers left and right are initialized.
+    -left starts from i + 1, representing the element immediately after nums[i].
+    -right starts from nums.length - 1, representing the last element of the array.
+Finding Triplets:
+-Within the loop, there's another loop that runs as long as left is less than right. This loop is for finding the other two elements of the triplet (nums[left] and nums[right]).
+-It calculates the sum of the three elements: sum = nums[i] + nums[left] + nums[right].
+-If the sum is zero (sum == 0), it means a triplet is found. It adds this triplet as a List of Integers to the result set using Arrays.asList(nums[i], nums[left], nums[right]). It then increments left and decrements right to find other potential triplets.
+-If the sum is less than zero (sum < 0), it means the sum needs to be increased, so it increments left.
+-If the sum is greater than zero (sum > 0), it means the sum needs to be decreased, so it decrements right.
+Returning the Result:
+-After completing the loop, the method returns a new ArrayList containing all unique triplets found, converted from the result set.

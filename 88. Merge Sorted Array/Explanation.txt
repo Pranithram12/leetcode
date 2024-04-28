@@ -1,0 +1,14 @@
+Initialization:
+-p1 is initialized to m - 1, which represents the index of the last element in the nums1 array that contains valid elements.
+-p2 is initialized to n - 1, representing the last index of the nums2 array.
+-k is initialized to m + n - 1, which is the last index of the merged array where elements will be placed.
+Merge Process:
+-The code uses a while loop that continues until p2 is greater than or equal to 0, ensuring that all elements from nums2 are processed.
+-Within the loop:
+    -It checks if p1 is still within the valid range (p1 >= 0) and if the element in nums1 at index p1 is greater than the element in nums2 at index p2.
+    -If the condition is true (nums1[p1] > nums2[p2]), it places the element from nums1 at index p1 into nums1 at index k and decrements both p1 and k.
+    -If the condition is false (i.e., nums1[p1] <= nums2[p2]), it places the element from nums2 at index p2 into nums1 at index k and decrements both p2 and k.
+Merging Results:
+-This merging process ensures that the larger elements from both arrays (nums1 and nums2) are placed at the end of nums1 (starting from index m + n - 1) in a sorted manner.
+Final Result:
+-After the loop completes, nums1 will contain the merged and sorted elements from both nums1 and nums2.
