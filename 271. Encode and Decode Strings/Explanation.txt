@@ -1,0 +1,22 @@
+Encoding (encode method):
+-The encode method takes a list of strings strs as input.
+-It first checks if the input list is null or empty. If so, it returns an empty string.
+-A StringBuilder named encoded is created to build the encoded string.
+-For each string s in the input list strs, the following steps are performed:
+    -Append the length of s to encoded. This is done using s.length().
+    -Append the delimiter character (#) to separate the length from the actual string data.
+    -Append the actual string s to encoded.
+-After encoding all strings in the input list, the StringBuilder is converted to a string using encoded.toString() and returned as the encoded output.
+
+Decoding (decode method):
+-The decode method takes an encoded string s as input.
+-It first checks if the input string is null or empty. If so, it returns an empty list.
+-A list named decoded is created to store the decoded strings.
+-The decoding process involves iterating through the encoded string and extracting substrings based on the lengths and delimiter character #.
+-The main decoding logic is implemented in a while loop that continues until the end of the input string is reached.
+    -Within the loop, it finds the index of the delimiter character (#) starting from the current position i.
+    -If the delimiter is not found (slash == -1), it breaks the loop as it indicates an invalid format.
+    -It extracts the length of the substring from the start position i to the delimiter position slash.
+    -It then moves the position i to the start of the next substring by adding the length, the delimiter length (1), and 1 to account for the delimiter character itself.
+    -Finally, it adds the decoded substring (from the delimiter position + 1 to the new position i) to the decoded list.
+-Once all substrings are decoded, the decoded list containing the individual strings is returned as the output.
