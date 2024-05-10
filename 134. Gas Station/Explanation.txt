@@ -1,0 +1,35 @@
+Initialization:
+-Three variables are initialized:
+    -position: Tracks the potential starting station index. 
+    -sum: Tracks the current surplus/deficit of gas.
+    -total: Tracks the overall surplus/deficit encountered during the iteration.
+
+Looping through Gas Stations:
+-The code iterates through each gas station using a for loop.
+-index starts at 0 and goes up to the length of the gas array.
+-Calculating Surplus/Deficit:
+-At each station, sum is updated by subtracting the cost of reaching the next station from the available gas.
+-sum += gas[index] - cost[index];
+
+Checking for Deficit:
+-If sum becomes negative (indicating a deficit), it means the current station cannot be the starting point to complete the circuit without running out of gas.
+-if(sum < 0){ ... }
+
+Updating Position and Total:
+-When a deficit occurs, the deficit (sum) is added to the total deficit encountered so far.
+-total += sum;
+-The current surplus/deficit (sum) is reset to 0, as starting from this station doesn't yield a positive surplus.
+-sum=0;
+-position is updated to the next station index, as the current station cannot be the starting point.
+-position = index+1;
+
+Final Total Calculation:
+-After looping through all stations, any remaining surplus (if any) is added to the total surplus/deficit.
+-total += sum;
+
+Checking Feasibility:
+-If the total surplus (total) is non-negative, it means there's enough gas overall to complete the circuit without running out.
+-if(total >= 0){ return position; }
+-Returns the potential starting station index (position) in this case.
+-If the total surplus is negative, it means it's not possible to complete the circuit without running out of gas, so it returns -1.
+-else{ return -1; }
