@@ -1,9 +1,5 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        if (x < 0) {
-            return false;
-        }
-
         // Convert the integer to a string
         String strX = String.valueOf(x);
 
